@@ -4,6 +4,9 @@ html {
 
 .card {
     cursor: pointer;
-    font-size: 12px;
+    font-size: 10px;
 }
 
+[v-cloak] {
+    display: none;
+}
