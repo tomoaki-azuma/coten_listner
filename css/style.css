@@ -4,5 +4,6 @@ html {
 
 .card {
     cursor: pointer;
+    font-size: 12px;
 }
 
