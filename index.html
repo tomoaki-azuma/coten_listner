@@ -1,0 +1,142 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COTEN LISTNER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container-xs pt-3 mx-5">
+        <div id="app">
+
+        <div class="sticky-top ">
+            <div class="row d-flex justify-content-center bg-white">
+                <div><h3>COTEN LISTNER</h3></div>
+            </div>
+            <div class="row">
+                <div class="mx-2">
+                    <i class="fas fa-list-ol" @click="display_all"></i>
+                </div>
+                <div class="mx-2">
+                    <i class="fas fa-search fa-lg" data-toggle="modal" data-target="#myModal"></i>
+                </div>
+                <div class="mx-2">
+                    <i class="fas fa-book fa-lg"></i>
+                </div>
+            </div>
+                
+            <div v-show="ytplay_flg">
+                <div class="row d-flex justify-content-center bg-light">
+                    <div id="ytarea"></div>
+                    <p @click="closeYT">
+                    <i class="far fa-times-circle fa-2x"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- modal area -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title">Search by...</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                            <a href="#theme" class="nav-link active" data-toggle="tab">theme</a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="#tag" class="nav-link" data-toggle="tab">tag</a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="#keyword" class="nav-link" data-toggle="tab">keyword</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content d-flex justify-content-center">
+                        <div id="theme" class="tab-pane active">
+                            <div v-for="row_idx in Math.floor(themes.length/3)">
+                                <div class="d-inline-flex p-2 full-fix justify-content-around align-items-start">
+                                    <div v-for="idx in 3">
+                                        <template v-if="themes[(row_idx-1)*3 + (idx-1)].length != 0">
+                                            <div class="p-1">
+                                                <div class="card" style="width:120px; height:190px" @click="search_theme(themes[(row_idx-1)*3 + (idx-1)].p_no)" class="">
+                                                <img class="card-img-top" v-bind:src="themes[(row_idx-1)*3 + (idx-1)].img" alt="Card image">
+                                                <div class="card-body p-1">
+                                                  <p class="card-text">{{ themes[(row_idx-1)*3 + (idx-1)].title}}</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tag" class="tab-pane">
+                            Sorry, Under constructing ...
+                        </div>
+                        <div id="keyword" class="tab-pane">
+                            Sorry, Under constructing ...
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="d-flex mx-0 mt-3">
+                <div><small>Podcast 配信日:</small> <i class="fas fa-sort" @click="sort_change()"></i></div>
+            </div>
+            <div v-for="data in searched_program" class="border border-left-0 border-right-0 border-top-0 my-1 py-1 mx-1 px-0">
+                <div class="row">
+                    <div class="text-left px-0"><small>{{ data['delivery_date'] }}</small></div>
+                </div>
+                <div class="row">
+                    <div class="text-left px-0">{{ episode_num(data['num']) }} {{ data['title'] }} </div>
+                </div>
+                <div class="row d-flex justify-content-end align-self-end">
+                     <div class="mx-2">
+                        <a target="_blank" v-bind:href="'https://podcasts.google.com'+ data['google_podcast_url']">
+                            <i class="fas fa-podcast fa-sm"></i>
+                        </a>
+                    </div>
+                    <div class="mx-2">
+                        <p @click="playYT(data['youtube_url'])">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/program.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+html {
+    font-size: 14px; /* ルート要素のフォントサイズを1rem=14pxと定義する */
+}
+
+.card {
+    cursor: pointer;
+}
+
