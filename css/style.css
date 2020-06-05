@@ -7,6 +7,13 @@ html {
     font-size: 10px;
 }
 
+.book_title { 
+
+    /*線の種類（二重線）太さ 色*/
+    border-bottom: double 5px #FFC778;
+
+}
+
 [v-cloak] {
     display: none;
 }

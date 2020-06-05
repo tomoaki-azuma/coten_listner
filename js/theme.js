@@ -126,5 +126,13 @@ const theme_json = [
         "country": "アメリカ",
         "time": "1880-1968",
         "img": "img/mig.png"
+    },
+    {
+        "id": "17",
+        "title": "番外編",
+        "p_no": ["ex"],
+        "country": "アメリカ",
+        "time": "",
+        "img": "img/bangai.gif"
     }
 ]
