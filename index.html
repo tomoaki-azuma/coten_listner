@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COTEN LISTNER</title>
+    <title>COTEN LISTENER</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +14,7 @@
 
         <div class="sticky-top ">
             <div class="row d-flex justify-content-center bg-primary text-white p-2">
-                <div><h3 class="m-0 mx-2">COTEN LISTNER</h3></div>
+                <div><h3 class="m-0 mx-2">COTEN LISTENER</h3></div>
             </div>
             <div class="row mt-2">
                 <div class="mx-2">
@@ -97,7 +97,7 @@
 
         <div>
             <div class="d-flex mx-0 mt-3">
-                <div><small>Podcast 配信日:</small> <i class="fas fa-sort fa-lg" @click="sort_change()"></i></div>
+                <div><small>Podcast 配信日:</small> <i class="fas fa-sort fa-2x" @click="sort_change()"></i></div>
             </div>
             <div v-for="data in searched_program" class="border border-left-0 border-right-0 border-top-0 my-1 py-1 mx-1 px-0">
                 <div class="row">
@@ -109,12 +109,12 @@
                 <div class="row d-flex justify-content-end align-self-end">
                      <div class="mx-2">
                         <a target="_blank" v-bind:href="'https://podcasts.google.com'+ data['google_podcast_url']">
-                            <i class="fas fa-podcast fa-lg"></i>
+                            <i class="fas fa-podcast fa-2x"></i>
                         </a>
                     </div>
                     <div class="mx-2">
                         <p @click="playYT(data['youtube_url'])">
-                            <i class="fab fa-youtube fa-lg"></i>
+                            <i class="fab fa-youtube fa-2x"></i>
                         </p>
                     </div>
                 </div>
