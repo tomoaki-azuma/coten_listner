@@ -110,6 +110,6 @@ function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player('ytarea', {
         width: 250,
         height: 190,
-        videoId: '2xDAjrniULM'
+        videoId: ''
     });
 }
