@@ -18,7 +18,8 @@ let vm = new Vue({
                 this.ytplay_flg = true;
                 this.cur_video_id = video_id;
                 console.log(video_id);
-                ytPlayer.cueVideoById(video_id.replace('/watch?v=', ''));
+                //ytPlayer.cueVideoById(video_id.replace('/watch?v=', ''));{videoId: videoId}
+                ytPlayer.cueVideoById({videoId: video_id.replace('/watch?v=', '')});
             }
             
         },
