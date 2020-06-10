@@ -107,10 +107,30 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let ytPlayer;
 // API読み込み後にプレーヤー埋め込み
+// When You Tube API is ready, create a new 
+// You Tube player in the div with id 'player'
 function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('ytarea', {
-        width: 250,
-        height: 190,
-        videoId: ''
-    });
+    ytPlayer = new YT.Player('ytarea', 
+      {
+          videoId: 'FvCf8xYLYuA',   // Load the initial video
+          width: 250,
+          height: 190,
+          playerVars: {
+                 autoplay: 0,      // Don't autoplay the initial video
+                 rel: 0,           //  Don’t show related videos
+                 theme: "light",   // Use a light player instead of a dark one
+                 controls: 1,      // Show player controls
+                 showinfo: 0,      // Don’t show title or loader
+                 modestbranding: 1 // No You Tube logo on control bar
+          }
+      });
+  
 }
+
+//function onYouTubeIframeAPIReady() {
+//    ytPlayer = new YT.Player('ytarea', {
+//        width: 250,
+//        height: 190,
+//        videoId: ''
+//    });
+//}
