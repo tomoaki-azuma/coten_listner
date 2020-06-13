@@ -7,7 +7,8 @@ let vm = new Vue({
         themes: [],
         searched_program: [],
         sort_flg: 'd',  // ascending or decending
-        book_json: book_json
+        book_json: book_json,
+        search_keyword: ""
     },
     methods: {
         playYT: function(video_id) {
@@ -50,6 +51,13 @@ let vm = new Vue({
             this.sort_flg = 'a'
             this.sort_program(this.sort_flg)
             $('#myModal').modal('hide');
+        },
+        search_by_keyword: function() {
+            this.searched_program = this.program_data.filter( function( value, index, array ) {
+                console.log(value.title)
+                console.log(this.search_keyword)
+                return value.title.indexOf(this.search_keyword) >= 0;       
+            }, this)
         },
         display_all: function(p_no) {
             this.searched_program = this.program_data
