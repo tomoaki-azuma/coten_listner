@@ -129,6 +129,14 @@ const theme_json = [
     },
     {
         "id": "17",
+        "title": "チンギス・カン",
+        "p_no": ["0115"],
+        "country": "モンゴル",
+        "time": "",
+        "img": "img/chingis.gif"
+    },
+    {
+        "id": "18",
         "title": "番外編",
         "p_no": ["ex"],
         "country": "アメリカ",
