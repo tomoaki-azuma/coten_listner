@@ -130,7 +130,7 @@ const theme_json = [
     {
         "id": "17",
         "title": "チンギス・カン",
-        "p_no": ["0115"],
+        "p_no": ["0115","0116"],
         "country": "モンゴル",
         "time": "",
         "img": "img/chingis.gif"
