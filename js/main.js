@@ -22,7 +22,7 @@ let vm = new Vue({
                 //ytPlayer.cueVideoById(video_id.replace('/watch?v=', ''));{videoId: videoId}
                 ytPlayer.cueVideoById({videoId: video_id.replace('/watch?v=', '')});
             }
-            
+
         },
         closeYT: function() {
             ytPlayer.stopVideo();
@@ -32,7 +32,7 @@ let vm = new Vue({
             if (num.indexOf('ex.')) {
                 return '#' + Number(num)
             } else {
-                return '#ex.' + Number(num.substr(3)) 
+                return '#ex.' + Number(num.substr(3))
             }
         },
         search_theme: function(p_no) {
@@ -40,14 +40,14 @@ let vm = new Vue({
             console.log(p_no)
             if (p_no[0] === "ex") {
                 this.searched_program = this.program_data.filter( function( value, index, array ) {
-                    return value.num.indexOf('ex') >= 0;       
+                    return value.num.indexOf('ex') >= 0;
                 })
             } else {
                 this.searched_program = this.program_data.filter( function( value, index, array ) {
-                    return p_no.indexOf(value.num) >= 0;       
+                    return p_no.indexOf(value.num) >= 0;
                 })
             }
-            
+
             this.sort_flg = 'a'
             this.sort_program(this.sort_flg)
             $('#myModal').modal('hide');
@@ -56,7 +56,7 @@ let vm = new Vue({
             this.searched_program = this.program_data.filter( function( value, index, array ) {
                 console.log(value.title)
                 console.log(this.search_keyword)
-                return value.title.indexOf(this.search_keyword) >= 0;       
+                return value.title.indexOf(this.search_keyword) >= 0;
             }, this)
         },
         display_all: function(p_no) {
@@ -115,12 +115,12 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let ytPlayer;
 // API読み込み後にプレーヤー埋め込み
-// When You Tube API is ready, create a new 
+// When You Tube API is ready, create a new
 // You Tube player in the div with id 'player'
 function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('ytarea', 
+    ytPlayer = new YT.Player('ytarea',
       {
-          videoId: 'FvCf8xYLYuA',   // Load the initial video
+          videoId: '',   // Load the initial video
           width: 250,
           height: 190,
           playerVars: {
@@ -132,7 +132,7 @@ function onYouTubeIframeAPIReady() {
                  modestbranding: 1 // No You Tube logo on control bar
           }
       });
-  
+
 }
 
 //function onYouTubeIframeAPIReady() {
