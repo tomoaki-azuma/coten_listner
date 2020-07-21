@@ -43,7 +43,7 @@
                     <input type="text" v-model="search_keyword" @input="search_by_keyword" placeholder="search title">
                 </div>
              </div>
-                
+
             <div v-show="ytplay_flg">
                 <div class="row d-flex justify-content-center bg-light">
                     <div id="ytarea"></div>
@@ -130,15 +130,15 @@
                                         <li>
                                             <a v-bind:href="v[1]" target="_blank">{{ v[0] }}</a>
                                         </li>
-                                        
+
                                     </div>
                             </ul>
 
                         </div>
 
                     </div>
-                   
-                    
+
+
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@
                             <h5 class="book_title my-2">COTEN LISTNER とは？</h5>
                             <div>
                                 「歴史を面白く学ぶコテンラジオ」を楽しみやすくお手伝いするウェブページ（アプリです）。
-                                特にユーザー登録等は必要なくお使いいただけます。 
+                                特にユーザー登録等は必要なくお使いいただけます。
                             </div>
                         </div>
                         <div class="my-3">
@@ -179,7 +179,7 @@
                                         <img src="img/podcastward.png" alt="" class="img-fluid">
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="my-3">
@@ -214,12 +214,12 @@
                                 また、このサイトは私の趣味・学習の一環として作成しており、至らない点はご容赦ください。随時アップデートしていきます。<br><br>
                                 ご意見、ご要望などありましたらtwitter(<a href="https://twitter.com/TomoakiAzuma" target="_blank">tomoro</a>)まで。
                             </div>
-                            
+
                         </div>
 
                     </div>
-                   
-                    
+
+
                 </div>
             </div>
         </div>
@@ -236,26 +236,30 @@
                     <div class="text-left px-0" v-cloak>{{ episode_num(data['num']) }} {{ data['title'] }} </div>
                 </div>
                 <div class="row d-flex justify-content-end align-self-end">
-                     <div class="mx-2">
-                        <a target="_blank" v-bind:href="'https://podcasts.google.com'+ data['google_podcast_url']">
-                            <i class="fas fa-podcast fa-2x"></i>
-                        </a>
-                    </div>
-                    <div class="mx-2">
-                        <p @click="playYT(data['youtube_url'])">
-                            <i class="fab fa-youtube fa-2x"></i>
-                        </p>
-                    </div>
+                  <template v-if="data['google_podcast_url'] != ''">
+                 <div class="mx-2">
+                     <a target="_blank" v-bind:href="'https://podcasts.google.com'+ data['google_podcast_url']">
+                         <i class="fas fa-podcast fa-2x"></i>
+                     </a>
+                 </div>
+                 </template>
+                 <template v-if="data['youtube_url'] != ''">
+                 <div class="mx-2">
+                     <p @click="playYT(data['youtube_url'])">
+                         <i class="fab fa-youtube fa-2x"></i>
+                     </p>
+                 </div>
+                 </template>
                 </div>
             </div>
         </div>
 
-            
+
             </div>
 
         </div>
     </div>
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
