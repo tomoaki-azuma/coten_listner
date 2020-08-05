@@ -114,15 +114,22 @@ let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let ytPlayer;
+let yt_window_size = window.innerWidth;
+if (yt_window_size >= 600) {
+    yt_window_size = 600;
+}
+
+let yt_window_height = yt_window_size * 0.6;
+
 // API読み込み後にプレーヤー埋め込み
 // When You Tube API is ready, create a new
 // You Tube player in the div with id 'player'
 function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player('ytarea',
       {
-          videoId: '',   // Load the initial video
-          width: 250,
-          height: 190,
+          videoId: 'FvCf8xYLYuA',   // Load the initial video
+          width: yt_window_size,
+          height: yt_window_height,
           playerVars: {
                  autoplay: 0,      // Don't autoplay the initial video
                  rel: 0,           //  Don’t show related videos
