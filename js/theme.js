@@ -137,6 +137,14 @@ const theme_json = [
     },
     {
         "id": "18",
+        "title": "オスマン帝国",
+        "p_no": ["0123"],
+        "country": "トルコ",
+        "time": "",
+        "img": "img/osman.gif"
+    },
+    {
+        "id": "19",
         "title": "番外編",
         "p_no": ["ex"],
         "country": "アメリカ",
