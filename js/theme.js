@@ -138,7 +138,7 @@ const theme_json = [
     {
         "id": "18",
         "title": "オスマン帝国",
-        "p_no": ["0123"],
+        "p_no": ["0123", "0124"],
         "country": "トルコ",
         "time": "",
         "img": "img/osman.gif"
