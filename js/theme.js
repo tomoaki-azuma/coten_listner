@@ -145,6 +145,14 @@ const theme_json = [
     },
     {
         "id": "19",
+        "title": "最澄と空海",
+        "p_no": ["0132"],
+        "country": "日本",
+        "time": "",
+        "img": "img/saichokukai.gif"
+    },
+    {
+        "id": "19",
         "title": "番外編",
         "p_no": ["ex"],
         "country": "アメリカ",
