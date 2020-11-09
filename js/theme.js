@@ -152,7 +152,15 @@ const theme_json = [
         "img": "img/saichokukai.gif"
     },
     {
-        "id": "19",
+        "id": "20",
+        "title": "ユリウス・カエサル",
+        "p_no": ["0142"],
+        "country": "古代ローマ",
+        "time": "",
+        "img": "img/caesar.gif"
+    },
+    {
+        "id": "21",
         "title": "番外編",
         "p_no": ["ex"],
         "country": "アメリカ",
