@@ -154,7 +154,7 @@ const theme_json = [
     {
         "id": "20",
         "title": "ユリウス・カエサル",
-        "p_no": ["0142"],
+        "p_no": ["0142","0143", "0144"],
         "country": "古代ローマ",
         "time": "",
         "img": "img/caesar.gif"
