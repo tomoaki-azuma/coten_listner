@@ -161,6 +161,14 @@ const theme_json = [
     },
     {
         "id": "21",
+        "title": "宗教改革",
+        "p_no": ["0152","0153"],
+        "country": "",
+        "time": "",
+        "img": "img/ruta.gif"
+    },
+    {
+        "id": "22",
         "title": "番外編",
         "p_no": ["ex"],
         "country": "アメリカ",
